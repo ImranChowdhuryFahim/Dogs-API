@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "Imran Chowdhury",
   "license": "MIT",
-  "private":false,
+  "private": false,
   "scripts": {
     "start": "ts-node src/server.ts",
     "dev": "ts-node-dev src/server.ts",
@@ -20,6 +20,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "helmet": "^7.0.0",
+    "joi": "^17.9.2",
     "morgan": "^1.10.0",
     "sequelize": "^6.32.1",
     "tedious": "^16.1.0",

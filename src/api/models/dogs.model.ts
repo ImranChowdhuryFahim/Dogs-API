@@ -16,6 +16,7 @@ DogsInstance.init(
 	{
 		name: {
 			type: DataTypes.STRING,
+			primaryKey: true,
 			allowNull: false,
 		},
 		color: {
@@ -34,6 +35,8 @@ DogsInstance.init(
 	{
 		sequelize: sequelize,
 		tableName: 'dogs',
+		createdAt: false,
+		updatedAt: false,
 	}
 );
 

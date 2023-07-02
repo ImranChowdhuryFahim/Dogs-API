@@ -7,7 +7,7 @@ import { sequelize } from './database/connection';
 
 dbInitialize().then(() => {
     logger.info("initialized database");
-    sequelize.sync({ force: true }).then(() => logger.info("connected and synced database"));
+    sequelize.sync({ alter: true }).then(() => logger.info("connected and synced database"));
 }).catch((err) => {
     logger.error(err);
 })
