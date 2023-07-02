@@ -1,10 +1,8 @@
-import { Sequelize } from 'sequelize';
 import config from '../config';
 import {Connection,Request} from 'tedious';
 
 const env: string = config.env;
 const { database, host, username, password } = config.sequelize[env];
-const dialect = config.sequelize[env].dialect || 'mssql';
 
 const dbConfig = {
     server: host,
@@ -21,23 +19,12 @@ const dbConfig = {
     }
 }
 
-export const dbModels: any = {};
-
-export var sequelize: Sequelize;
 
 
 export default async function dbInitialize() {
 
-
     // create db if it doesn't already exist
     await ensureDbExists(database);
-
-    // connect to db
-    sequelize = new Sequelize(database, username, password, { host, dialect });
-
-
-    // sync all models with database
-    await sequelize.sync({ alter: true });
 
 }
 

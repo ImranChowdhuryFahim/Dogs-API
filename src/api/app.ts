@@ -3,7 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import router from './routes';
-import { routeNotFoundHandler } from './middlewares/routeNotFount.middleware';
+import { routeNotFoundHandler } from './middlewares/routeNotFound.middleware';
 
 const app: Application = express();
 
