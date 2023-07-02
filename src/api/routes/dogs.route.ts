@@ -1,10 +1,10 @@
-import dogsController from "../controllers/dogs.controller";
+import { getAllDogs } from "../controllers/dogs.controller";
 import { Router } from "express";
 import { validate } from "../middlewares/validator.middleware";
-import { getAllDogs } from '../validation';
+import { getAllDogsSchema } from '../validation';
 
 const router = Router();
 
-router.get("",validate(getAllDogs),dogsController.getAllDogs);
+router.get("",validate(getAllDogsSchema),getAllDogs);
 
 export default router;

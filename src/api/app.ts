@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import router from './routes';
 import { routeNotFoundHandler } from './middlewares/routeNotFound.middleware';
+import { globalErrorHandler } from './middlewares/globalError.middleware';
 
 const app: Application = express();
 
@@ -15,6 +16,7 @@ app.use(helmet());
 
 app.use("/",router);
 app.all("*", routeNotFoundHandler);
+app.use(globalErrorHandler);
 
 
 export default app;

@@ -34,7 +34,6 @@ async function ensureDbExists(database: string) {
         const connection = new Connection(dbConfig);
         connection.connect((err: any) => {
             if (err) {
-                console.error(err);
                 reject(`Connection Failed: ${err.message}`);
             }
 
@@ -43,7 +42,6 @@ async function ensureDbExists(database: string) {
             // var request = require('tedious').Request;
             const request = new Request(createDbQuery, (err: any) => {
                 if (err) {
-                    console.error(err);
                     reject(`Create DB Query Failed: ${err.message}`);
                 }
 

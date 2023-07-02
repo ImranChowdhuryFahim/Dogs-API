@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
 
-export const getAllDogs = Joi.object({
+export const getAllDogsSchema = Joi.object({
     attribute: Joi.string()
         .valid('name', 'color', 'tail_length', 'weight')
         .optional()
