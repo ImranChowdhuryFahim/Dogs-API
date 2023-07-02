@@ -2,7 +2,8 @@ import express, { Application } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import PingRoute from './routes/ping.route';
+import router from './routes';
+import { routeNotFoundHandler } from './middlewares/routeNotFount.middleware';
 
 const app: Application = express();
 
@@ -12,7 +13,8 @@ app.use(morgan('combined'));
 app.use(cors());
 app.use(helmet());
 
-app.use(PingRoute);
+app.use("/",router);
+app.all("*", routeNotFoundHandler);
 
 
 export default app;
