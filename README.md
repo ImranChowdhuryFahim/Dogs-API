@@ -6,7 +6,7 @@ This command initializes the database(creates the database if not exist, creates
 yarn run initialize:db
 ```
 
-This command initialized the database and starts the server
+This command starts the server
 ```bash
 yarn start
 ```

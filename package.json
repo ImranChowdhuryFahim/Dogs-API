@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "yarn run initialize:db && ts-node src/server.ts",
+    "start": "ts-node src/server.ts",
     "dev": "ts-node-dev src/server.ts",
     "test": "jest",
     "initialize:db": "ts-node src/database/initialize.ts",
