@@ -21,14 +21,8 @@ const dbConfig = {
 
 
 
-export default async function dbInitialize() {
 
-    // create db if it doesn't already exist
-    await ensureDbExists(database);
-
-}
-
-async function ensureDbExists(database: string) {
+export async function createDb() {
     return new Promise<void>((resolve, reject) => {
 
         const connection = new Connection(dbConfig);

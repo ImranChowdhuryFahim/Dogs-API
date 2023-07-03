@@ -1,13 +1,13 @@
 import logger from './logger';
 import app from './api/app';
 import config from './config';
-import dbInitialize from './database/initializer';
+import { createDb } from './database/createDb';
 import { sequelize } from './database/connection';
 
 
-dbInitialize().then(() => {
-    logger.info("initialized database");
-    sequelize.sync({ alter: true }).then(() => logger.info("connected and synced database"))
+createDb().then(() => {
+    logger.info("Database created if not exists");
+    sequelize.sync({ alter: true }).then(() => logger.info("Synced with database"))
         .catch((err) => { logger.error(err); });
 }).catch((err) => {
     logger.error(err);

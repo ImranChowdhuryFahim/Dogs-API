@@ -10,28 +10,6 @@ interface DogsAttribute {
 }
 
 
-/**
- * @swagger
- * components:
- *   schemas:
- *     Dog:
- *       type: object
- *       required:
- *         - name
- *         - color
- *         - tail_length
- * 		   - weight
- *       properties:
- *         name:
- *           type: string
- *         color:
- *           type: string
- *         tail_length:
- *           type: number
- *         weight:
- *           type: number
- */
-
 export class DogsInstance extends Model<DogsAttribute> { }
 
 

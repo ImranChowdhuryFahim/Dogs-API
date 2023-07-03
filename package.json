@@ -7,10 +7,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "yarn run seed && ts-node src/server.ts",
+    "start": "yarn run initialize:db && ts-node src/server.ts",
     "dev": "ts-node-dev src/server.ts",
     "test": "jest",
-    "seed": "ts-node src/database/seeds",
+    "initialize:db": "ts-node src/database/initialize.ts",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
