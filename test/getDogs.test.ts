@@ -1,8 +1,8 @@
-import { DogsInstance } from "../src/api/models/dogs.model";
+import { DogsInstance } from "../src/api/models/dog.model";
 import request from "supertest";
 import app from "../src/api/app";
 
-describe("test dogs route", () => {
+describe("test get dog", () => {
 
     const dogsData = [
         {
@@ -82,3 +82,4 @@ describe("test dogs route", () => {
         expect(res.status).toEqual(422);
     });
 })
+

@@ -6,10 +6,33 @@ interface DogsAttribute {
 	name: string;
 	color: string;
 	tail_length: number;
-    weight: number;
+	weight: number;
 }
 
-export class DogsInstance extends Model<DogsAttribute> {}
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Dog:
+ *       type: object
+ *       required:
+ *         - name
+ *         - color
+ *         - tail_length
+ * 		   - weight
+ *       properties:
+ *         name:
+ *           type: string
+ *         color:
+ *           type: string
+ *         tail_length:
+ *           type: number
+ *         weight:
+ *           type: number
+ */
+
+export class DogsInstance extends Model<DogsAttribute> { }
 
 
 DogsInstance.init(
@@ -27,10 +50,10 @@ DogsInstance.init(
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-        weight: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        }
+		weight: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		}
 	},
 	{
 		sequelize: sequelize,

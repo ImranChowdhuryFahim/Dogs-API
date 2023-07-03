@@ -1,4 +1,4 @@
-import { DogsInstance } from '../../api/models/dogs.model';
+import { DogsInstance } from '../../api/models/dog.model';
 
 const dogsData = [
     {
