@@ -54,6 +54,13 @@ export default {
             host: process.env.PROD_DB_HOSTNAME || 'localhost',
             dialect: process.env.PROD_DB_DIALECT || 'mssql',
             
+        },
+        docker: {
+            username: process.env.DOCKER_DB_USERNAME || 'root',
+            password: process.env.DOCKER_DB_PASSWORD || 'password',
+            database: process.env.DOCKER_DB_NAME || 'database_prod_docker',
+            host: process.env.DOCKER_DB_HOSTNAME || 'mssql-server',
+            dialect: process.env.DOCKER_DB_DIALECT || 'mssql',
         }
     },
 

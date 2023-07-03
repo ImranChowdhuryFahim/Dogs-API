@@ -2,6 +2,7 @@ import config from '../config';
 import {Connection,Request} from 'tedious';
 
 const env: string = config.env;
+// console.log(env);
 const { database, host, username, password } = config.sequelize[env];
 
 const dbConfig = {

@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  api-service:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${EXPRESS_PORT}:${EXPRESS_PORT}
+    # networks:
+    #   - mynetwork
+
+    depends_on:
+      - mssql-server
+    restart: on-failure:10
+
+  mssql-server:
+    image: mcr.microsoft.com/mssql/server
+    container_name: mssql-server
+    # volumes:
+    #   - ./src/database/volumes:/var/opt/mssql/data
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${DEV_DB_PASSWORD}
+    ports:
+      - '1433:1433'
+#     networks:
+#       - mynetwork
+
+  nginx:
+    build: 
+      context: ./src/nginx
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+    environment:
+      - EXPRESS_PORT=${EXPRESS_PORT}
+    depends_on:
+      - api-service
+      - mssql-server
+    restart: on-failure:10
+# networks:
+#   mynetwork:
+#     driver: bridge
+
+
+
