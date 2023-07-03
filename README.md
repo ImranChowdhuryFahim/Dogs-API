@@ -7,9 +7,9 @@ We can easily run the whole project with only a single command:
 docker-compose up
 ```
 
-Docker will pull the MySQL and Node.js images (if our machine does not have it before).
+Docker will pull the MySQL and Node.js images (if our machine does not have them before).
 
-The services can be run on the background with command:
+The services can be run in the background with the command:
 ```bash
 docker-compose up -d
 ```
@@ -27,7 +27,7 @@ docker-compose down
 yarn run initialize:db
 ```
 
-### This command starts the server
+### This command starts initializing the database and starts the server
 ```bash
 yarn start
 ```
