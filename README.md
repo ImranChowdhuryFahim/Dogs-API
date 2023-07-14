@@ -1,5 +1,5 @@
 # Dogs-API
-This is a simple REST API with Node.js and Express.js with Typescript
+This is a simple REST API with Node.js and Express.js with Typescript to demonstrate Best Practices, API validation, Logging, Error Handling, Testing, Use of DB initialization script, Use of Husky pre-commit hook, Containerization
 
 ## Run the System
 We can easily run the whole project with only a single command:
