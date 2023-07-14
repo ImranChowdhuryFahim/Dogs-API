@@ -6,13 +6,17 @@ We can easily run the whole project with only a single command:
 ```bash
 docker-compose up
 ```
-
 Docker will pull the MySQL and Node.js images (if our machine does not have them before).
+
+Goto the URL:
+http://localhost/
 
 The services can be run in the background with the command:
 ```bash
 docker-compose up -d
 ```
+
+
 
 ## Stop the System
 Stopping all the running containers is also simple with a single command:
